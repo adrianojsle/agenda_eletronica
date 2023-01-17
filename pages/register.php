@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login - Agenda Logos</title>
+    <title>Login - Agenda Eletrônica</title>
     <link rel="icon" href="./assets/images/favicon.png" />
     <!-- Bootstrap CSS para estilização -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -24,7 +24,7 @@
 
                 <div class="px-5">
                     <div class="p-5 text-white">
-                        <h1 class="font-weight-bold">Efetue seu login</h1>
+                        <h1 class="font-weight-bold">Efetue seu cadastro</h1>
                     </div>
                     <div class="px-5 text-white">
                         <form>
