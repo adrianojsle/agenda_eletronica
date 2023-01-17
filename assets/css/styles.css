@@ -1,0 +1,42 @@
+.bg-logos {
+  background-color: #5e30d9;
+  color: #fff;
+}
+
+.btn-gold {
+  background-color: #f1b61d;
+}
+
+.btn-gold:hover {
+  background-color: #f1b63d;
+}
+
+.nav-link > span {
+    color: #fff;
+}
+
+.nav-link:hover > span {
+    color: #5e30d9;
+}
+
+.nav-link > i {
+    color: #fff;
+}
+
+.nav-link:hover > i {
+    color: #5e30d9;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+}
+
+.bg-withopacity {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    background-color: #ffffff33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -5,28 +5,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login - Agenda Logos</title>
+    <link rel="icon" href="./assets/images/favicon.png" />
     <!-- Bootstrap CSS para estilização -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="./assets/css/styles.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="text-center mt-5">
-            <img src="logo.png" class="img-fluid" alt="Logo da empresa">
-            <h1 class="mb-5 text-primary">Login</h1>
-            <form>
-                <div class="form-group">
-                    <label for="username">Nome de usuário</label>
-                    <input type="text" class="form-control" id="username" placeholder="Insira seu nome de usuário">
+    <div class="container-fluid vh-100">
+        <div class="row h-100">
+            <div class="col-5 h-100">
+                <div class="d-flex align-items-center justify-content-center h-100">
+                    <img class="w-100 p-3 h-auto" src="./assets/images/contatos.png" />
                 </div>
-                <div class="form-group">
-                    <label for="password">Senha</label>
-                    <input type="password" class="form-control" id="password" placeholder="Insira sua senha">
+            </div>
+            <div class="col-7 bg-logos h-100 pt-5">
+
+                <div class="px-5">
+                    <div class="p-5 text-white">
+                        <h1 class="font-weight-bold">Efetue seu login</h1>
+                    </div>
+                    <div class="px-5 text-white">
+                        <form>
+                            <input class="form-control p-3 rounded-pill" type="text" placeholder="E-mail" aria-label="Seu e-mail">
+                            <input class="form-control p-3 rounded-pill mt-4" type="password" placeholder="Senha" aria-label="Seu e-mail">
+                            <div class="row pt-5">
+                                <div class="col-6 d-flex align-items-center justify-content-center">
+                                    <button type="button" class="btn btn-gold w-100 py-2 rounded-pill">Cadastre-se</button>
+                                </div>
+                                <div class="col-6 d-flex align-items-center justify-content-center">
+                                    <button type="button" class="btn btn-outline-light w-100 py-2 rounded-pill ">Entrar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Entrar</button>
-            </form>
+            </div>
         </div>
     </div>
+
     <!-- Bootstrap JS para estilização -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
