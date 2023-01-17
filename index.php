@@ -14,5 +14,9 @@ if (isset($_GET['p'])) {
         require_once 'pages/err.php';
     }
 } else {
-    header("Location: /?p=login");
+    if ($session->isLoggedIn()) {
+        header("Location: /?p=dashboard");
+    } else {
+        header("Location: /?p=login");
+    }
 }
