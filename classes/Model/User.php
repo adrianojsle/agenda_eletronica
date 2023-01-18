@@ -42,4 +42,16 @@ class User extends DbConnect
         $_SESSION['logged_in'] = true;
         $_SESSION['user'] = $user;
     }
+
+    public function count()
+    {
+        $query = "SELECT COUNT(*) FROM $this->tableName";
+        $stmt = $this->connect()->prepare($query);
+        if ($stmt->execute()) {
+            $countItems = $stmt->fetchColumn();
+            return $countItems;
+        } else {
+            return 0;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '../../classes/Controller/SessionController.php';
-$user = new SessionController();
-if (!$user->isLoggedIn()) {
+$session = new SessionController();
+if (!$session->isLoggedIn()) {
     header('Location: /?p=login');
     exit;
 }
@@ -62,12 +62,12 @@ if (isset($_GET['p'])) {
                             <img src="/assets/images/profile.png" alt="perfil" width="30" height="30" class="rounded-circle me-2">
                             <span class="d-none d-sm-inline mx-1 w-50 text-truncate">
                                 <?php 
-                                echo $user->profile()['name'];
+                                echo $session->profile()['name'];
                                 ?>
                             </span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                            <li><a class="dropdown-item" href="#">Editar Perfil</a></li>
+                            <li><a class="dropdown-item" href="/?p=profile">Editar Perfil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
