@@ -7,12 +7,12 @@ class User extends DbConnect
 
     public function register($name, $email, $password)
     {
-        $password = password_hash($password, PASSWORD_DEFAULT);
+        $passwordCrypt = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO $this->tableName (name, email, password) VALUES (:name, :email, :password)";
         $stmt = $this->connect()->prepare($query);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':password', $passwordCrypt);
 
         if ($stmt->execute()) {
             return true;
@@ -29,7 +29,8 @@ class User extends DbConnect
         $stmt->execute();
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($user && password_verify($password, $user['password'])) {
-            return $user;
+            $this->startSession($user);
+            return true;
         } else {
             return false;
         }

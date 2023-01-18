@@ -1,11 +1,20 @@
 <?php
 
-class SessionController {
-    public function isLoggedIn() {
+class SessionController
+{
+    public function isLoggedIn()
+    {
         return isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
     }
-    public function logout() {
+    public function logout()
+    {
         session_destroy();
-        header('Location: /index.php');
+        header('Location: /?p=login');
+        exit;
+    }
+
+    public function profile()
+    {
+        return $_SESSION['user'];
     }
 }

@@ -32,7 +32,7 @@
                             <input class="form-control p-3 rounded-pill mt-4" type="password" placeholder="Senha" aria-label="Seu e-mail">
                             <div class="row pt-5">
                                 <div class="col-6 d-flex align-items-center justify-content-center">
-                                    <button type="button" class="btn btn-gold w-100 py-2 rounded-pill">Cadastre-se</button>
+                                    <a href="/?p=register" class="w-100"><button type="button" class="btn btn-gold rounded-pill w-100 py-2">Cadastre-se</button></a>
                                 </div>
                                 <div class="col-6 d-flex align-items-center justify-content-center">
                                     <button type="button" class="btn btn-outline-light w-100 py-2 rounded-pill ">Entrar</button>

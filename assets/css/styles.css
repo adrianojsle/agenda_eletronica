@@ -31,6 +31,18 @@
   background-color: #fff;
 }
 
+.nav-active {
+  background-color: #fff !important;
+}
+
+.nav-active > i {
+  color: #5e30d9;
+}
+
+.nav-active > span {
+  color: #5e30d9;
+}
+
 .bg-withopacity {
     width: 60px;
     height: 60px;
@@ -39,4 +51,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.toast {
+  position: fixed;
+  margin-top: 19px;
+  margin-left: 19px;
 }
