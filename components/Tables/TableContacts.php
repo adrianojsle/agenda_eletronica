@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '../../../classes/Model/Contact.php';
+require_once __DIR__ . '../../../classes/Model/Address.php';
 $contact = new Contact();
+$address = new Address();
 $perPage = 5;
 $currentPage = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
 $contacts = $contact->getAll($perPage, $currentPage);
@@ -26,7 +28,7 @@ if ($contact->count() > 0) {
                     echo "<th scope='row'>" . $item['id'] . "</th>";
                     echo "<td>" . $item['name'] . "</td>";
                     echo "<td>" . $item['phone'] . "</td>";
-                    echo "<td>" . $item['address_id'] . "</td>";
+                    echo "<td>" . $address->getAddressById($item['address_id']) . "</td>";
                 ?>
                     <td>
                         <div class="btn-group" role="group" aria-label="Ações nos contatos">

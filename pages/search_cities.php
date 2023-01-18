@@ -8,4 +8,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     require_once __DIR__ . '../../pages/err.php';
 }
-?>
