@@ -35,7 +35,7 @@ if ($contact->count() > 0) {
                             <button type="button" class="btn btn-sm">
                                 <i class="fas fa-edit"></i>
                             </button>
-                            <button type="button" class="btn btn-sm">
+                            <button type="button" class="btn btn-sm open-modal" data-item-id="<?php echo $item['id']; ?>" data-item-name="<?php echo $item['name']; ?>">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </div>
@@ -43,6 +43,7 @@ if ($contact->count() > 0) {
                 <?php
                     echo "</tr>";
                 }
+                include __DIR__ . '../../Modals/ModalDelete.php';
                 ?>
             </tbody>
         </table>
@@ -52,3 +53,19 @@ if ($contact->count() > 0) {
     echo "<div class='card p-5 mt-3 d-flex align-items-center justify-center'><h3>Nenhum contato registrado ainda</h3></div>";
 }
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        $('.open-modal').click(function() {
+            let itemId = this.getAttribute('data-item-id');
+            let itemName = this.getAttribute('data-item-name');
+            console.log(itemId, itemName);
+            $('#modalDelete .modal-title').text('Deletar item');
+            $('#modalDelete .description').text('Tem certeza que deseja deletar o contato de ' + itemName + '?');
+            $('#modalDelete').modal('show');
+        });
+        $('.close').click(function() {
+            $('#modalDelete').modal('hide');
+        });
+    });
+</script>
