@@ -30,4 +30,27 @@ class UserController
             return $msg;
         }
     }
+
+    public function login($email, $password)
+    {
+        // Validacão simples
+        if (empty($email) || empty($password)) {
+            $msg = 'Todos os campos precisam ser preenchidos';
+        } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $msg = 'E-mail inválido!';
+        } else {
+            // Registro do usuário
+            $user = new User;
+            $result = $user->login($email, $password);
+            if ($result) {
+                header('Location: /?p=dashboard');
+                exit;
+            } else {
+                $msg = 'Não foi possível efetuar o seu login';
+            }
+        }
+        if (!empty($msg)) {
+            return $msg;
+        }
+    }
 }
