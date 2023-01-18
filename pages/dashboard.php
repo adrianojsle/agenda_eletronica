@@ -3,20 +3,27 @@
     <h3>Dashboard</h3>
     <div class="row pt-2 px-2">
         <!-- Cards -->
-        <?php 
+        <?php
         include __DIR__ . '../../components/Cards/CardContacts.php';
         ?>
-        <?php 
+        <?php
         include __DIR__ . '../../components/Cards/CardUsers.php';
         ?>
         <!-- Final dos itens -->
         <!-- Tabela -->
-        <h4 class="pt-3 pb-2">Contatos</h4>
-        <?php 
+        <div class="row pt-4 pb-2">
+            <div class="col-12 col-md-6">
+                <h4>Contatos</h4>
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-end p-0">
+                <a href="/?p=add_contact"><button type="button" class="btn btn-outline-dark btn-sm">Adicionar novo</button></a>
+            </div>
+        </div>
+        <?php
         include __DIR__ . '../../components/Tables/TableContacts.php';
         ?>
         <!-- Final da tabela -->
-        <?php 
+        <?php
         include __DIR__ . '../../components/Paginations/PaginationContacts.php';
         ?>
     </div>

@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                     <div class="px-5 text-white">
                         <form method="post" action="/?p=login">
-                            <input class="form-control p-3 rounded-pill mt-4" type="text" placeholder="E-mail" aria-label="Seu e-mail" id="email" name="email">
-                            <input class="form-control p-3 rounded-pill mt-4" type="password" placeholder="Senha" aria-label="Seu e-mail" id="password" name="password">
+                            <input class="form-control p-3 rounded-pill mt-4" type="text" placeholder="E-mail" aria-label="Seu e-mail" id="email" name="email" required>
+                            <input class="form-control p-3 rounded-pill mt-4" type="password" placeholder="Senha" aria-label="Seu e-mail" id="password" name="password" required>
                             <div class="row pt-5">
                                 <div class="col-6 d-flex align-items-center justify-content-center">
                                     <a href="/?p=register" class="w-100"><button type="button" class="btn btn-gold rounded-pill w-100 py-2">Cadastre-se</button></a>

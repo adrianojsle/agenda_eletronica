@@ -12,7 +12,7 @@ class UserController
             $msg = 'E-mail inválido!';
         } else {
             // Registro do usuário
-            $user = new User;
+            $user = new User();
             $result = $user->register($name, $email, $password);
             if ($result) {
                 $createSession = $user->login($email, $password);

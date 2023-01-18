@@ -28,6 +28,11 @@ if (isset($_GET['p'])) {
 
 <body>
     <div class="container-fluid h-100">
+    <?php
+        if (!empty($msg)) {
+            include __DIR__ . '../../components/Toast.php';
+        }
+        ?>
         <div class="row flex-nowrap">
             <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-logos">
                 <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100">
@@ -38,7 +43,7 @@ if (isset($_GET['p'])) {
                         <li class="nav-item w-100 px-2">
                             <a href="/?p=dashboard" class="nav-link 
                             <?php
-                            if (in_array($page, ['dashboard'])) {
+                            if (in_array($page, ['dashboard', 'add_contact'])) {
                                 echo 'nav-active';
                             } ?>
                             px-3 mb-2">
