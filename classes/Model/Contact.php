@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '../../Db/DbConnect.php';
+require_once __DIR__ . '../../Controller/PaginationController.php';
 
 class Contact extends DbConnect
 {
@@ -7,7 +8,9 @@ class Contact extends DbConnect
 
     public function count()
     {
-        $query = "SELECT COUNT(*) FROM $this->tableName";
+        $session = new SessionController();
+        $userId = $session->profile()['id'];
+        $query = "SELECT COUNT(*) FROM $this->tableName WHERE user_id = $userId";
         $stmt = $this->connect()->prepare($query);
         if ($stmt->execute()) {
             $countItems = $stmt->fetchColumn();
@@ -17,12 +20,11 @@ class Contact extends DbConnect
         }
     }
 
-    public function getAll()
+    public function getAll($perPage, $page)
     {
-        $query = "SELECT * FROM $this->tableName ORDER BY id DESC";
-        $stmt = $this->connect()->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll();
+        $pagination = new PaginationController($perPage, $this->tableName);
+        $items = $pagination->getData($page);
+        return $items;
     }
 
     public function create($values)

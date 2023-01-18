@@ -1,7 +1,9 @@
 <?php
 require_once __DIR__ . '../../../classes/Model/Contact.php';
 $contact = new Contact();
-$contacts = $contact->getAll();
+$perPage = 5;
+$currentPage = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
+$contacts = $contact->getAll($perPage, $currentPage);
 ?>
 <?php
 if ($contact->count() > 0) {

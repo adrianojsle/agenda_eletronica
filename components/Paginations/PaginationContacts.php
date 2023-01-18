@@ -1,24 +1,20 @@
 <?php
 require_once __DIR__ . '../../../classes/Model/Contact.php';
+require_once __DIR__ . '../../../classes/Controller/PaginationController.php';
 $contact = new Contact();
-$contacts = $contact->getAll();
+$perPage = 5;
+$currentPage = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
+$contacts = $contact->getAll($perPage, $currentPage);
+$pagination = new PaginationController($perPage, 'contacts');
+$data = $pagination->getData($currentPage);
+$links = $pagination->getLinks($currentPage);
 ?>
 <?php
 if ($contact->count() > 0) {
 ?>
     <nav aria-label="Paginação">
         <ul class="pagination justify-content-end">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">
-                    <i class="fas fa-angle-left"></i>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">
-                    <i class="fas fa-angle-right"></i>
-                </a>
-            </li>
+            <?php echo $links; ?>
         </ul>
     </nav>
 <?php
