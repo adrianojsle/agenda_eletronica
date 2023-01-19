@@ -23,7 +23,7 @@ class Address extends DbConnect
         $stmt->bindParam(':stateId', $address['state_id']);
         $stmt->execute();
         $state = $stmt->fetch();
-        return $address['street'] . ' - ' . $address['number'] . ', ' . $address['complement'] . ', ' . $address['neighborhood'] . ', ' . $address['zipcode'] . ', ' . $address['zipcode'] . ', ' . $city['name'] . ' - ' . $state['uf'];
+        return $address['street'] . ' - ' . $address['number'] . ', ' . $address['complement'] . ', ' . $address['neighborhood'] . ', ' . $address['zipcode'] . ', ' . $city['name'] . ' - ' . $state['uf'];
     }
 
     public function load(int $addressId)

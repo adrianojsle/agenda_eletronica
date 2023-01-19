@@ -19,39 +19,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <!-- Final dos itens -->
         <!-- Tabela -->
         <div class="pt-4 pb-2">
-            <div class="col-12 col-md-6">
-                <h4>Contatos</h4>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h4>Contatos</h4>
+                </div>
+                <div class="col-12 col-md-6">
+                    <form>
+                        <div class="row">
+                            <div class="col-6 p-1">
+                                <input type="text" id="input_search" class="form-control form-control-sm border-primary" placeholder="Buscar...">
+                            </div>
+                            <div class="col-2 p-1">
+                                <button type="button" onclick="search()" class="btn btn-primary btn-sm btn-block w-100">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                            <div class="col-4 p-1">
+                                <a href="/?p=add_contact" class="btn btn-primary btn-sm btn-block w-100">
+                                    <span class='d-none d-md-block'>Adicionar novo</span>
+                                    <span class='d-block d-md-none'>Novo</span>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-12 col-md-6">
-                <form>
-                    <div class="row">
-                        <div class="col-6 p-1">
-                            <input type="text" id="input_search" class="form-control form-control-sm border-primary" placeholder="Buscar...">
-                        </div>
-                        <div class="col-2 p-1">
-                            <button type="button" onclick="search()" class="btn btn-primary btn-sm btn-block w-100">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                        <div class="col-4 p-1">
-                            <a href="/?p=add_contact" class="btn btn-primary btn-sm btn-block w-100">
-                                <span class='d-none d-md-block'>Adicionar novo</span>
-                                <span class='d-block d-md-none'>Novo</span>
-                            </a>
-                        </div>
-                    </div>
-                </form>
-            </div>
+
         </div>
-        </div>
-        <?php
-        include __DIR__ . '../../components/Tables/TableContacts.php';
-        ?>
-        <!-- Final da tabela -->
-        <?php
-        include __DIR__ . '../../components/Paginations/PaginationContacts.php';
-        ?>
     </div>
+    <?php
+    include __DIR__ . '../../components/Tables/TableContacts.php';
+    ?>
+    <!-- Final da tabela -->
+    <?php
+    include __DIR__ . '../../components/Paginations/PaginationContacts.php';
+    ?>
+</div>
 </div>
 <script>
     function search() {

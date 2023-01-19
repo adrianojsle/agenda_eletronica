@@ -32,7 +32,7 @@ $states = $state->getAll();
                     <option value="">Estado</option>
                     <?php
                     foreach ($states as $item) {
-                        echo "<option value='" . $item['id'] . "'>" . $item['name'] . "</option>";
+                        echo "<option value='" . $item['id'] . "' data-uf='" . $item['uf'] . "'>" . $item['name'] . "</option>";
                     }
                     ?>
                 </select>
@@ -55,6 +55,7 @@ $states = $state->getAll();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="/assets/js/mask.js"></script>
 <script>
+    let citySelected = '';
     $(document).ready(function() {
         // Máscaras
         $('#phone').inputmask('(99) 9999[9]-9999');
@@ -73,11 +74,33 @@ $states = $state->getAll();
                     let options = '<option value="">Selecione uma cidade</option>';
                     let cityObjects = JSON.parse(cities);
                     $.map(cityObjects, function(city) {
-                        options += '<option value="' + city.id + '">' + city.name + '</option>';
+                        options += '<option value="' + city.id + '" data-name="' + city.name + '">' + city.name + '</option>';
                     });
                     $("#city_id").html(options);
+                    if (citySelected !== '') {
+                        $("#city_id option[data-name='" + citySelected + "']").prop("selected", true);
+                        $("#city_id").change();
+                        citySelected = '';
+                    }
                 }
             });
+        });
+
+        // Preenchimento automático do cep
+        $("#zipcode").blur(function() {
+            let zipcode = $(this).val();
+            if (zipcode.split(/\D+/).join("").length === 8) {
+                console.log(zipcode)
+                $.getJSON("https://viacep.com.br/ws/" + zipcode + "/json/", function(data) {
+                    console.log(data)
+                    $("#street").val(data.logradouro);
+                    $("#neighborhood").val(data.bairro);
+                    $("#complement").val(data.complemento);
+                    $("#state_id option[data-uf='" + data.uf + "']").prop("selected", true);
+                    $("#state_id").change();
+                    citySelected = data.localidade;
+                });
+            }
         });
     });
 </script>
