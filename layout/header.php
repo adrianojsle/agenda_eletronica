@@ -34,7 +34,7 @@ if (isset($_GET['p'])) {
         }
         ?>
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-logos">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-logos h-100 position-fixed ">
                 <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100">
                     <a href="/" class="d-flex align-items-center pt-3 pb-4 mb-md-0 me-md-auto text-primary text-decoration-none w-100">
                     </a>
@@ -81,3 +81,4 @@ if (isset($_GET['p'])) {
                     </div>
                 </div>
             </div>
+            <div class="col-2 col-md-3 col-xl-2"></div>

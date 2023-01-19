@@ -1,16 +1,16 @@
 <form method="post" action="/?p=profile">
     <div class="card p-4 mt-3">
         <div class="row">
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Nome" id="name" name="name" value="<?php echo $user['name']; ?>" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="email" placeholder="E-mail" id="email" name="email" value="<?php echo $user['email']; ?>" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="password" placeholder="Senha" id="password" name="password" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="password" placeholder="Confirme a senha" id="conf_password" name="conf_password" required>
             </div>
 

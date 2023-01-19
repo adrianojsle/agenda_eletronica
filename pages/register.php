@@ -31,17 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         ?>
         <div class="row h-100">
-            <div class="col-5 h-100">
+            <div class="col-12 col-md-5 d-none d-md-block h-100">
                 <div class="d-flex align-items-center justify-content-center h-100">
-                    <img class="w-100 p-3 h-auto" src="./assets/images/contatos.png" />
+                    <img class="w-100 p-3 h-auto" src="./assets/images/register.png" />
                 </div>
             </div>
-            <div class="col-7 bg-logos h-100 pt-5">
-                <div class="px-5">
-                    <div class="p-5 text-white">
+            <div class="col-12 col-md-7 bg-logos h-100 pt-1 pt-md-5">
+                <div class="px-2 px-md-5">
+                    <div class="p-4 pt-5 ps-3 p-md-5 text-white">
                         <h1 class="font-weight-bold">Efetue seu cadastro</h1>
                     </div>
-                    <div class="px-5 text-white">
+                    <div class="px-2 px-md-5 text-white">
                         <form method="post" action="/?p=register">
                             <input class="form-control p-3 rounded-pill" type="text" placeholder="Nome" aria-label="Seu nome" id="name" name="name" required>
                             <input class="form-control p-3 rounded-pill mt-4" type="text" placeholder="E-mail" aria-label="Seu e-mail" id="email" name="email" required>

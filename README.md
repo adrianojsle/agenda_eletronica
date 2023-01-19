@@ -9,8 +9,12 @@
 - Contagem de contatos vinculados ao seu usuário
 - Listagem de contatos vinculados ao seu usuário
 - Paginação de contatos (5 contatos por página)
+- Sistema de busca por contato
 - Exclusão de contato
 - Edição de contato
+- Edição de perfil
+- Sair do dashboard
+- Aplicação responsiva e adaptada para celular
 
 ## Telas
 ![alt text](assets/images/screens/cadastro.jpeg)

@@ -8,28 +8,28 @@ $states = $state->getAll();
     <input type="hidden" id="address_id" name="address_id" value="<?php echo $contact['address_id']; ?>">
     <div class="card p-4 mt-3">
         <div class="row">
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Nome" id="name" name="name" value="<?php echo $contact['name']; ?>" required>
             </div>
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Telefone" id="phone" name="phone" value="<?php echo $contact['phone']; ?>" required>
             </div>
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="CEP" id="zipcode" name="zipcode" value="<?php echo $address['zipcode']; ?>" required>
             </div>
-            <div class="col-8 p-2">
+            <div class="col-12 col-md-8 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Avenida/Rua" id="street" name="street" value="<?php echo $address['street']; ?>" required>
             </div>
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Número" id="number" name="number" value="<?php echo $address['number']; ?>" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Bairro" id="neighborhood" name="neighborhood" value="<?php echo $address['neighborhood']; ?>" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Complemento" id="complement" name="complement" value="<?php echo $address['complement']; ?>" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <select class="form-control p-2 px-3 rounded-pill mt-2" id="state_id" name="state_id" value="<?php echo $address['state_id']; ?>" required>
                     <option value="">Estado</option>
                     <?php
@@ -43,7 +43,7 @@ $states = $state->getAll();
                     ?>
                 </select>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <select class="form-control p-2 px-3 rounded-pill mt-2" id="city_id" name="city_id" required>
                     <option value="">Cidade</option>
                 </select>

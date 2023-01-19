@@ -6,28 +6,28 @@ $states = $state->getAll();
 <form method="post" action="/?p=add_contact">
     <div class="card p-4 mt-3">
         <div class="row">
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Nome" id="name" name="name" required>
             </div>
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Telefone" id="phone" name="phone" required>
             </div>
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="CEP" id="zipcode" name="zipcode" required>
             </div>
-            <div class="col-8 p-2">
+            <div class="col-12 col-md-8 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Avenida/Rua" id="street" name="street" required>
             </div>
-            <div class="col-4 p-2">
+            <div class="col-12 col-md-4 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Número" id="number" name="number" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Bairro" id="neighborhood" name="neighborhood" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <input class="form-control p-2 px-3 rounded-pill mt-2" type="text" placeholder="Complemento" id="complement" name="complement" required>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <select class="form-control p-2 px-3 rounded-pill mt-2" id="state_id" name="state_id" required>
                     <option value="">Estado</option>
                     <?php
@@ -37,7 +37,7 @@ $states = $state->getAll();
                     ?>
                 </select>
             </div>
-            <div class="col-6 p-2">
+            <div class="col-12 col-md-6 p-2">
                 <select class="form-control p-2 px-3 rounded-pill mt-2" id="city_id" name="city_id" required>
                     <option value="">Cidade</option>
                 </select>

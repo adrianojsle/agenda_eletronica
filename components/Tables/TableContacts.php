@@ -27,7 +27,7 @@ if ($contact->count() > 0) {
                     <th scope="col">#</th>
                     <th scope="col">Nome</th>
                     <th scope="col">Telefone</th>
-                    <th scope="col">Endereço</th>
+                    <th class="d-none d-md-block" scope="col">Endereço</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -38,10 +38,18 @@ if ($contact->count() > 0) {
                     echo "<th scope='row'>" . $item['id'] . "</th>";
                     echo "<td>" . $item['name'] . "</td>";
                     echo "<td>" . $item['phone'] . "</td>";
-                    echo "<td>" . $address->getAddressById($item['address_id']) . "</td>";
+                    echo "<td class='d-none d-md-block'>" . $address->getAddressById($item['address_id']) . "</td>";
                 ?>
                     <td>
-                        <div class="btn-group" role="group" aria-label="Ações nos contatos">
+                        <div class="btn-group-vertical d-md-none" role="group" aria-label="Ações nos contatos">
+                            <a href="/?p=edit_contact&id=<?php echo $item['id']; ?>"><button type="button" class="btn btn-sm">
+                                    <i class="fas fa-edit"></i>
+                                </button></a>
+                            <button type="button" class="btn btn-sm open-modal" data-item-id="<?php echo $item['id']; ?>" data-item-name="<?php echo $item['name']; ?>">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                        <div class="btn-group d-none d-md-block" role="group" aria-label="Ações nos contatos">
                             <a href="/?p=edit_contact&id=<?php echo $item['id']; ?>"><button type="button" class="btn btn-sm">
                                     <i class="fas fa-edit"></i>
                                 </button></a>

@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ?>
         <!-- Final dos itens -->
         <!-- Tabela -->
-        <div class="row pt-4 pb-2">
+        <div class="pt-4 pb-2">
             <div class="col-12 col-md-6">
                 <h4>Contatos</h4>
             </div>
-            <div class="col-12 col-md-6 p-0">
+            <div class="col-12 col-md-6">
                 <form>
                     <div class="row">
                         <div class="col-6 p-1">
@@ -34,11 +34,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </button>
                         </div>
                         <div class="col-4 p-1">
-                            <a href="/?p=add_contact" class="btn btn-primary btn-sm btn-block w-100">Adicionar novo</a>
+                            <a href="/?p=add_contact" class="btn btn-primary btn-sm btn-block w-100">
+                                <span class='d-none d-md-block'>Adicionar novo</span>
+                                <span class='d-block d-md-none'>Novo</span>
+                            </a>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
         </div>
         <?php
         include __DIR__ . '../../components/Tables/TableContacts.php';
