@@ -39,4 +39,15 @@ class Address extends DbConnect
             return false;
         }
     }
+
+    public function delete(int $addressId)
+    {
+        $query = "DELETE FROM addresses WHERE id = $addressId";
+        $stmt = $this->connect()->prepare($query);
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

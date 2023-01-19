@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '../../Db/DbConnect.php';
 require_once __DIR__ . '../../Controller/PaginationController.php';
+require_once __DIR__ . '../../Model/Address.php';
 
 class Contact extends DbConnect
 {
@@ -102,11 +103,14 @@ class Contact extends DbConnect
         $stmtSearchContact = $this->connect()->prepare($querySearchContact);
         $stmtSearchContact->execute();
         $contact = $stmtSearchContact->fetch();
+        $address_id = $contact['address_id'];
 
         if ($contact['user_id'] === $session->profile()['id']) {
             $query = "DELETE FROM contacts WHERE id = $contactId";
             $stmt = $this->connect()->prepare($query);
             if ($stmt->execute()) {
+                $address = new Address();
+                $address->delete($address_id);
                 return true;
             } else {
                 return false;

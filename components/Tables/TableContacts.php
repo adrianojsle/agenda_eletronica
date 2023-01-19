@@ -38,7 +38,7 @@ if ($contact->count() > 0) {
                     echo "<th scope='row'>" . $item['id'] . "</th>";
                     echo "<td>" . $item['name'] . "</td>";
                     echo "<td>" . $item['phone'] . "</td>";
-                    echo "<td class='d-none d-md-block'>" . $address->getAddressById($item['address_id']) . "</td>";
+                    echo "<td class='d-none d-md-block pb-3'>" . $address->getAddressById($item['address_id']) . "</td>";
                 ?>
                     <td>
                         <div class="btn-group-vertical d-md-none" role="group" aria-label="Ações nos contatos">

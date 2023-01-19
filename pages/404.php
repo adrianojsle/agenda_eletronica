@@ -17,14 +17,14 @@
         <div class="row h-100">
             <div class="col-5 h-100">
                 <div class="d-flex align-items-center justify-content-center h-100">
-                    <img class="w-100 p-3 h-auto" src="./assets/images/err.png" />
+                    <img class="w-100 p-3 h-auto" src="./assets/images/44.png" />
                 </div>
             </div>
             <div class="col-7 bg-logos h-100 pt-5">
 
                 <div class="px-5">
                     <div class="p-5 text-white">
-                        <h1 class="font-weight-bold">Você precisa configurar o banco de dados primeiro</h1>
+                        <h1 class="font-weight-bold">Você tentou acessar uma página inexistente</h1>
                     </div>
                     <div class="px-5">
                         <a href="/">

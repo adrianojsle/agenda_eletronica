@@ -1,5 +1,5 @@
 # Agenda Eletrônica
-### Esse projeto foi desenvolvido utilizando PHP 8.1 e banco MySQL (.sql se encontra na raiz do projeto)
+### Esse projeto foi desenvolvido utilizando PHP 8.1 e banco MySQL
 #### **Agenda Eletrônica** é para você que deseja salvar informações dos clientes como nome, telefone e endereço. Basta criar uma conta gratuita com nome, e-mail e senha e logo após começar a armazenar os seus contatos. Nenhum outro usuário pode ver, editar ou excluir as suas informações.
 
 ## Funcionalidades

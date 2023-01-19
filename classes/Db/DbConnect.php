@@ -13,7 +13,8 @@ class DbConnect {
             $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $dbConnection;
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            // echo "Error: " . $e->getMessage();
+            require_once 'pages/err.php';
         }
     }
 }
