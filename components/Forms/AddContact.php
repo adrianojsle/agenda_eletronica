@@ -44,8 +44,8 @@ $states = $state->getAll();
             </div>
             <div class="col-12 p-2 pt-5 d-flex justify-content-end">
                 <div class="btn-group rounded-pill">
-                    <a href="/?p=dashboard" class="btn btn-outline-secondary  py-2">Cancelar</a>
-                    <button type="submit" class="btn btn-outline-success py-2">Adicionar contato</button>
+                    <a href="/?p=dashboard" class="btn btn-outline-secondary py-2 btn-sm">Cancelar</a>
+                    <button type="submit" class="btn btn-outline-success py-2 btn-sm">Adicionar contato</button>
                 </div>
             </div>
         </div>

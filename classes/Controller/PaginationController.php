@@ -12,12 +12,12 @@ class PaginationController extends DbConnect
         $this->tableName = $tableName;
     }
 
-    public function getData($pagination)
+    public function getData($pagination, $search = '')
     {
         $session = new SessionController();
         $start = ($pagination - 1) * $this->perPage;
         $userId = $session->profile()['id'];
-        $query = "SELECT * FROM $this->tableName WHERE user_id = $userId ORDER BY id DESC LIMIT $start, $this->perPage";
+        $query = "SELECT * FROM $this->tableName WHERE user_id = $userId AND name LIKE '%$search%' ORDER BY id DESC LIMIT $start, $this->perPage";
         $stmt = $this->connect()->query($query);
         $stmt->execute();
         return $stmt->fetchAll();

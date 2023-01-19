@@ -43,7 +43,7 @@ if (isset($_GET['p'])) {
                         <li class="nav-item w-100 px-2">
                             <a href="/?p=dashboard" class="nav-link 
                             <?php
-                            if (in_array($page, ['dashboard', 'add_contact'])) {
+                            if (in_array($page, ['dashboard', 'add_contact', 'edit_contact'])) {
                                 echo 'nav-active';
                             } ?>
                             px-3 mb-2">

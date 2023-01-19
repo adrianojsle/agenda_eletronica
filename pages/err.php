@@ -17,7 +17,7 @@
         <div class="row h-100">
             <div class="col-5 h-100">
                 <div class="d-flex align-items-center justify-content-center h-100">
-                    <img class="w-100 p-3 h-auto" src="./assets/images/contatos.png" />
+                    <img class="w-100 p-3 h-auto" src="./assets/images/44.png" />
                 </div>
             </div>
             <div class="col-7 bg-logos h-100 pt-5">

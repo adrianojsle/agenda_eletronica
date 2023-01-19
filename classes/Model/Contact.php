@@ -20,10 +20,10 @@ class Contact extends DbConnect
         }
     }
 
-    public function getAll($perPage, $page)
+    public function getAll($perPage, $page, $search = '')
     {
         $pagination = new PaginationController($perPage, $this->tableName);
-        $items = $pagination->getData($page);
+        $items = $pagination->getData($page, $search);
         return $items;
     }
 
