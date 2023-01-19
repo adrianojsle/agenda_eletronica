@@ -22,4 +22,20 @@ class ContactController
             return $msg;
         }
     }
+
+    public function deleteById(int $contactId)
+    {
+        if (empty($contactId)) {
+            $msg = 'Não foi possível encontrar o item';
+        } else {
+            $contact = new Contact();
+            $result = $contact->delete($contactId);
+            if ($result) {
+                header("Refresh: 0");
+                exit;
+            } else {
+                $msg = 'Não foi possível deletar';
+            }
+        }
+    }
 }

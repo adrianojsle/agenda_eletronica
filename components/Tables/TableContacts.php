@@ -62,6 +62,7 @@ if ($contact->count() > 0) {
             console.log(itemId, itemName);
             $('#modalDelete .modal-title').text('Deletar item');
             $('#modalDelete .description').text('Tem certeza que deseja deletar o contato de ' + itemName + '?');
+            $('#contact_id').val(itemId);
             $('#modalDelete').modal('show');
         });
         $('.close').click(function() {

@@ -59,4 +59,26 @@ class Contact extends DbConnect
             return false;
         }
     }
+
+    public function delete(int $contactId)
+    {
+        $session = new SessionController();
+        // Encontrar o item
+        $querySearchContact = "SELECT * FROM contacts WHERE id = $contactId";
+        $stmtSearchContact = $this->connect()->prepare($querySearchContact);
+        $stmtSearchContact->execute();
+        $contact = $stmtSearchContact->fetch();
+
+        if ($contact['user_id'] === $session->profile()['id']) {
+            $query = "DELETE FROM contacts WHERE id = $contactId";
+            $stmt = $this->connect()->prepare($query);
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

@@ -1,4 +1,12 @@
-<?php include __DIR__ . '../../layout/header.php'; ?>
+<?php 
+require_once __DIR__ . '../../classes/Controller/ContactController.php';
+include __DIR__ . '../../layout/header.php'; 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $controller = new ContactController;
+    $msg = $controller->deleteById($_POST['contact_id']);
+}
+
+?>
 <div class="col p-4">
     <h3>Dashboard</h3>
     <div class="row pt-2 px-2">

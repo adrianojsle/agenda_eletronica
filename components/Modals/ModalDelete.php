@@ -12,7 +12,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary close">Cancelar</button>
-                <button type="button" class="btn btn-danger" id="delete-button">Sim, confirmo</button>
+                <form method="post" action="">
+                    <input name="contact_id" id="contact_id" type="hidden" />
+                    <button type="submit" class="btn btn-danger" id="delete-button">Sim, confirmo</button>
+                </form>
             </div>
         </div>
     </div>
