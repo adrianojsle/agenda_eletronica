@@ -43,7 +43,10 @@ $states = $state->getAll();
                 </select>
             </div>
             <div class="col-12 p-2 pt-5 d-flex justify-content-end">
-                <button type="submit" class="btn btn-outline-success w-25 py-2 rounded-pill">Adicionar contato</button>
+                <div class="btn-group rounded-pill">
+                    <a href="/?p=dashboard" class="btn btn-outline-secondary  py-2">Cancelar</a>
+                    <button type="submit" class="btn btn-outline-success py-2">Adicionar contato</button>
+                </div>
             </div>
         </div>
     </div>

@@ -23,8 +23,20 @@ class Address extends DbConnect
         $stmt->bindParam(':stateId', $address['state_id']);
         $stmt->execute();
         $state = $stmt->fetch();
-
-
         return $address['street'] . ' - ' . $address['number'] . ', ' . $address['complement'] . ', ' . $address['neighborhood'] . ', ' . $address['zipcode'] . ', ' . $address['zipcode'] . ', ' . $city['name'] . ' - ' . $state['uf'];
+    }
+
+    public function load(int $addressId)
+    {
+        // Encontrar o item
+        $query = "SELECT * FROM addresses WHERE id = $addressId";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute();
+        $address = $stmt->fetch();
+        if ($stmt->execute()) {
+            return $address;
+        } else {
+            return false;
+        }
     }
 }

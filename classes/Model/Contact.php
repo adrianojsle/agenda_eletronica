@@ -60,6 +60,40 @@ class Contact extends DbConnect
         }
     }
 
+    public function edit($values)
+    {
+        $session = new SessionController();
+        // Cadastra o endereço
+        $query = "UPDATE addresses SET street = :street, number = :number, zipcode = :zipcode, neighborhood = :neighborhood, complement = :complement, state_id = :state_id, city_id = :city_id WHERE id = :address_id";
+        $conn = $this->connect();
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':street', $values['street']);
+        $stmt->bindParam(':number', $values['number']);
+        $stmt->bindParam(':zipcode', $values['zipcode']);
+        $stmt->bindParam(':neighborhood', $values['neighborhood']);
+        $stmt->bindParam(':complement', $values['complement']);
+        $stmt->bindParam(':state_id', $values['state_id']);
+        $stmt->bindParam(':city_id', $values['city_id']);
+        $stmt->bindParam(':address_id', $values['address_id']);
+
+        if ($stmt->execute()) {
+            $queryContact = "UPDATE $this->tableName SET name = :name, phone = :phone, user_id = :user_id, address_id = :address_id WHERE id = :id";
+            $stmtContact = $this->connect()->prepare($queryContact);
+            $stmtContact->bindParam(':name', $values['name']);
+            $stmtContact->bindParam(':phone', $values['phone']);
+            $stmtContact->bindParam(':user_id', $session->profile()['id']);
+            $stmtContact->bindParam(':address_id', $values['address_id']);
+            $stmtContact->bindParam(':id', $values['id']);
+            if ($stmtContact->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public function delete(int $contactId)
     {
         $session = new SessionController();

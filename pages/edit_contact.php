@@ -11,12 +11,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'name' => $_POST['name'],
         'phone' => $_POST['phone'],
         'state_id' => $_POST['state_id'],
-        'city_id' => $_POST['city_id']
+        'city_id' => $_POST['city_id'],
+        'id' => $_POST['id'],
+        'address_id' => $_POST['address_id'],
     ];
-    $msg = $controller->create($data);
+    $msg = $controller->edit($data);
 }
 if (isset($_GET['id'])) {
     $contact = $controller->loadContact($_GET['id']);
+    $address = $controller->loadAddress($contact['address_id']);
 }
 
 include __DIR__ . '../../layout/header.php';
