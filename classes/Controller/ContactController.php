@@ -38,4 +38,21 @@ class ContactController
             }
         }
     }
+
+    public function loadContact(int $contactId)
+    {
+        if (empty($contactId)) {
+            header('Location: /?p=dashboard');
+            exit;
+        } else {
+            $contact = new Contact();
+            $result = $contact->load($contactId);
+            if ($result) {
+                return $result;
+            } else {
+                header('Location: /?p=dashboard');
+                exit;
+            }
+        }
+    }
 }

@@ -81,4 +81,23 @@ class Contact extends DbConnect
             return false;
         }
     }
+
+    public function load(int $contactId)
+    {
+        $session = new SessionController();
+        // Encontrar o item
+        $query = "SELECT * FROM contacts WHERE id = $contactId";
+        $stmt = $this->connect()->prepare($query);
+        $stmt->execute();
+        $contact = $stmt->fetch();
+        if ($contact['user_id'] === $session->profile()['id']) {
+            if ($stmt->execute()) {
+                return $contact;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }

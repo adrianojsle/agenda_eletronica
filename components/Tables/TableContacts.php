@@ -32,9 +32,9 @@ if ($contact->count() > 0) {
                 ?>
                     <td>
                         <div class="btn-group" role="group" aria-label="Ações nos contatos">
-                            <button type="button" class="btn btn-sm">
+                            <a href="/?p=edit_contact&id=<?php echo $item['id']; ?>"><button type="button" class="btn btn-sm">
                                 <i class="fas fa-edit"></i>
-                            </button>
+                            </button></a>
                             <button type="button" class="btn btn-sm open-modal" data-item-id="<?php echo $item['id']; ?>" data-item-name="<?php echo $item['name']; ?>">
                                 <i class="fas fa-trash"></i>
                             </button>
