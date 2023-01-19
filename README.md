@@ -19,4 +19,5 @@
 ![alt text](assets/images/screens/adicionar.jpeg)
 ![alt text](assets/images/screens/editar.jpeg)
 ![alt text](assets/images/screens/excluir.jpeg)
+![alt text](assets/images/screens/profile.jpeg)
 ![alt text](assets/images/screens/404.jpeg)
