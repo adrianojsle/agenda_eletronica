@@ -8,6 +8,7 @@
 - Contagem de usuários
 - Contagem de contatos vinculados ao seu usuário
 - Listagem de contatos vinculados ao seu usuário
+- Paginação de contatos (5 contatos por página)
 - Exclusão de contato
 - Edição de contato
 

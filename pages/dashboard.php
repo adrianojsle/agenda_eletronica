@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     function search() {
         let input = document.getElementById("input_search").value;
         console.log("Pesquisando por: " + input);
+        window.location = '/?p=dashboard&s=' + input;
     }
 </script>
 <?php include __DIR__ . '../../layout/footer.php'; ?>

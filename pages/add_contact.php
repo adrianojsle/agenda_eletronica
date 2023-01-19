@@ -3,15 +3,15 @@ require_once __DIR__ . '../../classes/Controller/ContactController.php';
 $controller = new ContactController;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
-        'street' => $_POST['street'],
-        'number' => $_POST['number'],
-        'zipcode' => $_POST['zipcode'],
-        'neighborhood' => $_POST['neighborhood'],
-        'complement' => $_POST['complement'],
-        'name' => $_POST['name'],
-        'phone' => $_POST['phone'],
-        'state_id' => $_POST['state_id'],
-        'city_id' => $_POST['city_id']
+        'street' => trim($_POST['street']),
+        'number' => trim($_POST['number']),
+        'zipcode' => trim($_POST['zipcode']),
+        'neighborhood' => trim($_POST['neighborhood']),
+        'complement' => trim($_POST['complement']),
+        'name' => trim($_POST['name']),
+        'phone' => trim($_POST['phone']),
+        'state_id' => trim($_POST['state_id']),
+        'city_id' => trim($_POST['city_id'])
     ];
     $msg = $controller->create($data);
 }

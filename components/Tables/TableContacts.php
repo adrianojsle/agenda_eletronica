@@ -4,12 +4,22 @@ require_once __DIR__ . '../../../classes/Model/Address.php';
 $contact = new Contact();
 $address = new Address();
 $perPage = 5;
+$search = isset($_GET['s']) ? $_GET['s'] : '';
 $currentPage = isset($_GET['pagination']) ? $_GET['pagination'] : 1;
-$contacts = $contact->getAll($perPage, $currentPage);
+$contacts = $contact->getAll($perPage, $currentPage, $search);
 ?>
 <?php
 if ($contact->count() > 0) {
 ?>
+    <?php
+    if ($search !== '') {
+    ?>
+        <div class="card mb-3 p-2">
+            <span><a href="/?p=dashboard" class="text-decoration-none cursor-pointer tet-secondary">Busca por: <strong><?php echo $search; ?></strong> <strong class="text-danger">&times;</strong></a></span>
+        </div>
+    <?php
+    }
+    ?>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>

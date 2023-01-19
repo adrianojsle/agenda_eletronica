@@ -54,4 +54,39 @@ class User extends DbConnect
             return 0;
         }
     }
+
+    public function forceUpdateSession()
+    {
+        $session = new SessionController();
+        $userId = $session->profile()['id'];
+        $query = "SELECT * FROM users WHERE id = $userId";
+        $stmt = $this->connect()->prepare($query);
+        if ($stmt->execute()) {
+            $user = $stmt->fetch();
+            $_SESSION['user'] = $user;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function edit($values)
+    {
+        $session = new SessionController();
+        $passwordCrypt = password_hash($values['password'], PASSWORD_DEFAULT);
+        $query = "UPDATE users SET name = :name, email = :email, password = :password WHERE id = :user_id";
+        $conn = $this->connect();
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':name', $values['name']);
+        $stmt->bindParam(':email', $values['email']);
+        $stmt->bindParam(':password', $passwordCrypt);
+        $stmt->bindParam(':user_id', $session->profile()['id']);
+
+        if ($stmt->execute()) {
+            $this->forceUpdateSession();
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -53,4 +53,26 @@ class UserController
             return $msg;
         }
     }
+
+    public function edit($values)
+    {
+        // Validacão simples
+        if (empty($values['name']) || empty($values['email']) || empty($values['password']) || empty($values['conf_password'])) {
+            $msg = 'Todos os campos precisam ser preenchidos';
+        } else if ($values['password'] !== $values['conf_password']) {
+            $msg = 'A confirmação de senha está diferente';
+        } else {
+            $user = new User();
+            $result = $user->edit($values);
+            if ($result) {
+                header('Location: /?p=dashboard');
+                exit;
+            } else {
+                $msg = 'Não foi possível editar';
+            }
+        }
+        if (!empty($msg)) {
+            return $msg;
+        }
+    }
 }
