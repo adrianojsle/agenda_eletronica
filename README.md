@@ -12,4 +12,10 @@
 - Edição de contato
 
 ## Telas
-![alt text]('assets/images/screens/cadastro.jpeg')
+![alt text](assets/images/screens/cadastro.jpeg)
+![alt text](assets/images/screens/login.jpeg)
+![alt text](assets/images/screens/dashboard.jpeg)
+![alt text](assets/images/screens/adicionar.jpeg)
+![alt text](assets/images/screens/editar.jpeg)
+![alt text](assets/images/screens/excluir.jpeg)
+![alt text](assets/images/screens/404.jpeg)
